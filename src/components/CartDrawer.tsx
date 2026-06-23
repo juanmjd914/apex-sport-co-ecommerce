@@ -11,10 +11,10 @@ export default function CartDrawer() {
   const handleCheckout = () => {
     // Generate order message for WhatsApp
     const orderDetails = cart
-      .map((item) => `- ${item.name} x${item.quantity} (€${(item.price * item.quantity).toFixed(2)})`)
+      .map((item) => `- ${item.name} x${item.quantity} ($${(item.price * item.quantity).toLocaleString('es-CL')})`)
       .join('\n')
     
-    const message = `Hola APEX Sport Co., me gustaría comprar:\n${orderDetails}\n\n*Total: €${subtotal.toFixed(2)}*`
+    const message = `Hola APEX Sport Co., me gustaría comprar:\n${orderDetails}\n\n*Total: $${subtotal.toLocaleString('es-CL')}*`
     const encodedMessage = encodeURIComponent(message)
     
     // Support Chilean phone number from Techne Creativ WhatsApp list or a mock support number
@@ -104,7 +104,7 @@ export default function CartDrawer() {
                           </button>
                         </div>
                         <span className="text-body-md text-primary font-black">
-                          €{(item.price * item.quantity).toFixed(2)}
+                          ${(item.price * item.quantity).toLocaleString('es-CL')}
                         </span>
                       </div>
                     </div>
@@ -119,7 +119,7 @@ export default function CartDrawer() {
                 <div className="space-y-4">
                   <div className="flex justify-between text-body-sm text-on-surface-variant">
                     <span>Subtotal</span>
-                    <span className="font-bold text-on-surface">€{subtotal.toFixed(2)}</span>
+                    <span className="font-bold text-on-surface">${subtotal.toLocaleString('es-CL')}</span>
                   </div>
                   <div className="flex justify-between text-body-sm text-on-surface-variant">
                     <span>Envío</span>
@@ -127,7 +127,7 @@ export default function CartDrawer() {
                   </div>
                   <div className="border-t border-outline-variant pt-4 flex justify-between text-body-md font-bold text-primary">
                     <span>Total estimado</span>
-                    <span className="font-black text-lg">€{subtotal.toFixed(2)}</span>
+                    <span className="font-black text-lg">${subtotal.toLocaleString('es-CL')}</span>
                   </div>
                 </div>
 

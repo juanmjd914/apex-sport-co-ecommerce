@@ -431,13 +431,17 @@ const PRODUCTS_DATA: Product[] = [
       "Estuche de transporte de nylon Ripstop resistente al agua."
     ]
   },
-]
+].map(p => ({
+  ...p,
+  price: p.price < 5000 ? p.price * 1000 : p.price,
+  originalPrice: p.originalPrice ? (p.originalPrice < 5000 ? p.originalPrice * 1000 : p.originalPrice) : undefined
+}))
 
 export default function Shop() {
   const { addToCart } = useCartStore()
   const [selectedCategories, setSelectedCategories] = useState<string[]>([])
   const [selectedSports, setSelectedSports] = useState<string[]>([])
-  const [maxPrice, setMaxPrice] = useState<number>(1000)
+  const [maxPrice, setMaxPrice] = useState<number>(1000000)
   const [sortBy, setSortBy] = useState<string>('relevance')
   const [searchQuery, setSearchQuery] = useState<string>('')
   
@@ -481,7 +485,7 @@ export default function Shop() {
 
   const handleWhatsAppCheckout = (product: Product, e?: React.MouseEvent) => {
     if (e) e.stopPropagation()
-    const message = `Hola APEX Sport Co., me interesa comprar este producto:\n- ${product.name} (€${product.price.toFixed(2)})`
+    const message = `Hola APEX Sport Co., me interesa comprar este producto:\n- ${product.name} ($${product.price.toLocaleString('es-CL')})`
     window.open(`https://wa.me/56965174454?text=${encodeURIComponent(message)}`, '_blank')
   }
 
@@ -601,17 +605,17 @@ export default function Shop() {
                 <div className="space-y-4">
                   <input
                     type="range"
-                    min="50"
-                    max="1000"
-                    step="50"
+                    min="50000"
+                    max="1000000"
+                    step="50000"
                     value={maxPrice}
                     onChange={(e) => setMaxPrice(Number(e.target.value))}
                     className="w-full h-1 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary"
                   />
                   <div className="flex justify-between text-label-caps text-on-surface-variant text-[10px]">
-                    <span>€50</span>
-                    <span className="font-bold text-primary">€{maxPrice}</span>
-                    <span>€1000+</span>
+                    <span>$50.000</span>
+                    <span className="font-bold text-primary">${maxPrice.toLocaleString('es-CL')}</span>
+                    <span>$1.000.000+</span>
                   </div>
                 </div>
               </div>
@@ -703,15 +707,15 @@ export default function Shop() {
                         {product.onSale ? (
                           <>
                             <span className="text-body-md text-error font-black">
-                              €{product.price.toFixed(2)}
+                              ${product.price.toLocaleString('es-CL')}
                             </span>
                             <span className="text-[12px] text-outline line-through mb-0.5">
-                              €{product.originalPrice?.toFixed(2)}
+                              ${product.originalPrice?.toLocaleString('es-CL')}
                             </span>
                           </>
                         ) : (
                           <span className="text-body-md text-primary font-black">
-                            €{product.price.toFixed(2)}
+                            ${product.price.toLocaleString('es-CL')}
                           </span>
                         )}
                       </div>
@@ -812,18 +816,18 @@ export default function Shop() {
                   {activeProduct.onSale ? (
                     <div className="flex items-baseline gap-2">
                       <span className="text-price-lg text-error font-black">
-                        €{activeProduct.price.toFixed(2)}
+                        ${activeProduct.price.toLocaleString('es-CL')}
                       </span>
                       <span className="text-body-sm text-outline line-through">
-                        €{activeProduct.originalPrice?.toFixed(2)}
+                        ${activeProduct.originalPrice?.toLocaleString('es-CL')}
                       </span>
                       <span className="text-label-caps bg-error-container text-on-error-container px-2 py-0.5 rounded text-[10px]">
-                        AHORRAS €{(activeProduct.originalPrice! - activeProduct.price).toFixed(2)}
+                        AHORRAS ${(activeProduct.originalPrice! - activeProduct.price).toLocaleString('es-CL')}
                       </span>
                     </div>
                   ) : (
                     <span className="text-price-lg text-primary font-black">
-                      €{activeProduct.price.toFixed(2)}
+                      ${activeProduct.price.toLocaleString('es-CL')}
                     </span>
                   )}
                 </div>

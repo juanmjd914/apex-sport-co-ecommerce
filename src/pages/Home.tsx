@@ -8,7 +8,7 @@ const BEST_SELLERS = [
   {
     id: '14',
     name: "Traction-Pro Carbon Cleats",
-    price: 160.00,
+    price: 160000,
     image: "/asset/producto14.webp",
     category: "Calzado Deportivo",
     sport: "FÚTBOL",
@@ -17,7 +17,7 @@ const BEST_SELLERS = [
   {
     id: '16',
     name: "Glacier Shield Down Jacket",
-    price: 280.00,
+    price: 280000,
     image: "/asset/producto16.webp",
     category: "Textil Técnico",
     sport: "ALPINISMO",
@@ -26,7 +26,7 @@ const BEST_SELLERS = [
   {
     id: '21',
     name: "Wave-Cutter Fish Board 5'10\"",
-    price: 720.00,
+    price: 720000,
     image: "/asset/producto21.webp",
     category: "Tablas de Surf",
     sport: "SURF"
@@ -34,7 +34,7 @@ const BEST_SELLERS = [
   {
     id: '25',
     name: "Apex Snowboard Goggles V2",
-    price: 120.00,
+    price: 120000,
     image: "/asset/producto25.webp",
     category: "Accesorios Técnicos",
     sport: "SNOWBOARD"
@@ -272,7 +272,7 @@ export default function Home() {
                     <p className="text-[12px] text-on-surface-variant font-medium">{product.category}</p>
                   </div>
                   <div className="flex items-center justify-between pt-2">
-                    <span className="text-headline-md font-extrabold text-primary">€{product.price.toFixed(2)}</span>
+                    <span className="text-headline-md font-extrabold text-primary">${product.price.toLocaleString('es-CL')}</span>
                     <button
                       onClick={() => handleAddToCart(product)}
                       className={`p-2.5 rounded-full transition-colors cursor-pointer flex items-center justify-center ${
