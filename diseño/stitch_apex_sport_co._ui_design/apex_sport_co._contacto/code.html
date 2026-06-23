@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contacto | APEX SPORT CO.</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "primary": "#00417a",
+                "on-tertiary": "#ffffff",
+                "tertiary-fixed": "#ffdbc9",
+                "surface-container-highest": "#e1e2e9",
+                "on-surface-variant": "#424751",
+                "primary-fixed-dim": "#a5c8ff",
+                "on-secondary": "#ffffff",
+                "on-secondary-fixed-variant": "#534600",
+                "background": "#f9f9ff",
+                "surface-bright": "#f9f9ff",
+                "on-primary-fixed": "#001c3a",
+                "error": "#ba1a1a",
+                "secondary-container": "#f9d600",
+                "surface-container": "#ededf4",
+                "on-primary": "#ffffff",
+                "on-error": "#ffffff",
+                "surface-container-lowest": "#ffffff",
+                "error-container": "#ffdad6",
+                "tertiary-fixed-dim": "#ffb68c",
+                "outline": "#727782",
+                "on-tertiary-fixed": "#321200",
+                "on-tertiary-container": "#ffc09d",
+                "on-secondary-container": "#6d5c00",
+                "inverse-surface": "#2e3036",
+                "surface-container-low": "#f2f3fa",
+                "surface": "#f9f9ff",
+                "surface-tint": "#135faa",
+                "inverse-on-surface": "#eff0f7",
+                "on-tertiary-fixed-variant": "#753400",
+                "tertiary-container": "#8f4100",
+                "primary-container": "#0058a3",
+                "surface-container-high": "#e7e8ef",
+                "secondary-fixed-dim": "#e6c500",
+                "on-secondary-fixed": "#221b00",
+                "on-error-container": "#93000a",
+                "on-surface": "#191c21",
+                "on-background": "#191c21",
+                "on-primary-container": "#b2cfff",
+                "surface-variant": "#e1e2e9",
+                "on-primary-fixed-variant": "#004786",
+                "primary-fixed": "#d4e3ff",
+                "secondary-fixed": "#ffe25c",
+                "inverse-primary": "#a5c8ff",
+                "secondary": "#6e5e00",
+                "surface-dim": "#d8dae0",
+                "tertiary": "#6b2f00",
+                "outline-variant": "#c2c6d3"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "40px"
+            },
+            "spacing": {
+                "lg": "48px",
+                "md": "24px",
+                "xs": "8px",
+                "xl": "80px",
+                "gutter": "24px",
+                "base": "4px",
+                "sm": "16px",
+                "container-max": "1280px"
+            },
+            "fontFamily": {
+                "headline-md": ["Inter"],
+                "body-md": ["Inter"],
+                "display-lg": ["Inter"],
+                "label-caps": ["Inter"],
+                "body-sm": ["Inter"]
+            },
+            "fontSize": {
+                "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .accordion-item.active .accordion-content {
+            max-height: 200px;
+        }
+        .accordion-item.active .rotate-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar (Shared Component) -->
+<header class="w-full flex flex-col bg-surface-container-lowest dark:bg-surface border-b border-outline-variant sticky top-0 z-50">
+<div class="max-w-container-max mx-auto w-full px-gutter flex items-center justify-between h-20">
+<div class="text-headline-md font-headline-md font-black text-primary dark:text-inverse-primary tracking-tight">
+                APEX SPORT CO.
+            </div>
+<nav class="hidden md:flex items-center space-x-md">
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#">Inicio</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#">Surf</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#">Alpinismo</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#">Snowboard</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#">Montaña</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#">Fútbol</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#">Béisbol</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#">Nosotros</a>
+<a class="text-primary dark:text-inverse-primary border-b-2 border-primary font-bold pb-1 transition-colors duration-200" href="#">Contact</a>
+</nav>
+<div class="flex items-center space-x-sm">
+<button class="p-xs hover:bg-surface-container-high rounded-full transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="person">person</span>
+</button>
+<button class="p-xs hover:bg-surface-container-high rounded-full transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="shopping_cart">shopping_cart</span>
+</button>
+</div>
+</div>
+</header>
+<main class="w-full">
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-gutter py-xl">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-md">Contacto</h1>
+<p class="text-body-md text-on-surface-variant max-w-2xl">Estamos aquí para ayudarte. Ya sea una duda técnica sobre equipamiento o el seguimiento de tu pedido, nuestro equipo de especialistas te responderá en menos de 24 horas.</p>
+</section>
+<!-- Contact Form & Info Grid -->
+<section class="bg-[#F5F5F5] py-xl">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-12 gap-lg">
+<!-- Form Column -->
+<div class="md:col-span-7 bg-white p-lg rounded-lg border border-[#DFDFDF] shadow-sm">
+<form action="#" class="space-y-md">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="flex flex-col space-y-base">
+<label class="text-body-sm font-bold text-on-surface">Nombre</label>
+<input class="w-full border border-[#DFDFDF] rounded-lg px-sm py-xs focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="Tu nombre completo" type="text"/>
+</div>
+<div class="flex flex-col space-y-base">
+<label class="text-body-sm font-bold text-on-surface">Email</label>
+<input class="w-full border border-[#DFDFDF] rounded-lg px-sm py-xs focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="ejemplo@correo.com" type="email"/>
+</div>
+</div>
+<div class="flex flex-col space-y-base">
+<label class="text-body-sm font-bold text-on-surface">Asunto</label>
+<input class="w-full border border-[#DFDFDF] rounded-lg px-sm py-xs focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="¿En qué podemos ayudarte?" type="text"/>
+</div>
+<div class="flex flex-col space-y-base">
+<label class="text-body-sm font-bold text-on-surface">Mensaje</label>
+<textarea class="w-full border border-[#DFDFDF] rounded-lg px-sm py-xs focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all resize-none" placeholder="Escribe tu mensaje aquí..." rows="6"></textarea>
+</div>
+<button class="bg-primary text-white font-body-md py-sm px-lg rounded-full hover:opacity-90 active:scale-[0.98] transition-all inline-flex items-center justify-center" type="submit">
+                            Enviar Mensaje
+                        </button>
+</form>
+</div>
+<!-- Info Column -->
+<div class="md:col-span-5 flex flex-col space-y-lg">
+<!-- Contact Details -->
+<div class="space-y-md">
+<h2 class="font-headline-md text-headline-md text-on-surface">Datos de contacto</h2>
+<div class="flex items-start space-x-md">
+<span class="material-symbols-outlined text-primary p-xs bg-primary-fixed rounded-xl" data-icon="chat">chat</span>
+<div>
+<p class="text-label-caps text-label-caps text-on-surface-variant">WhatsApp</p>
+<p class="text-body-md font-bold text-on-surface">+34 600 000 000</p>
+<p class="text-body-sm text-on-surface-variant">Lunes a Viernes, 9:00 - 18:00</p>
+</div>
+</div>
+<div class="flex items-start space-x-md">
+<span class="material-symbols-outlined text-primary p-xs bg-primary-fixed rounded-xl" data-icon="mail">mail</span>
+<div>
+<p class="text-label-caps text-label-caps text-on-surface-variant">Email</p>
+<p class="text-body-md font-bold text-on-surface">soporte@apexsport.co</p>
+</div>
+</div>
+<div class="flex items-start space-x-md">
+<span class="material-symbols-outlined text-primary p-xs bg-primary-fixed rounded-xl" data-icon="share">share</span>
+<div>
+<p class="text-label-caps text-label-caps text-on-surface-variant">Síguenos</p>
+<div class="flex space-x-sm mt-xs">
+<a class="text-on-surface hover:text-primary transition-colors" href="#">Instagram</a>
+<span class="text-outline-variant">•</span>
+<a class="text-on-surface hover:text-primary transition-colors" href="#">YouTube</a>
+<span class="text-outline-variant">•</span>
+<a class="text-on-surface hover:text-primary transition-colors" href="#">Strava</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Map Placeholder -->
+<div class="relative w-full aspect-video rounded-lg overflow-hidden border border-[#DFDFDF] grayscale hover:grayscale-0 transition-all duration-500">
+<div class="w-full h-full bg-surface-container flex items-center justify-center relative" data-location="Chamonix-Mont-Blanc" style="">
+<img class="w-full h-full object-cover opacity-80" data-alt="A clean, minimalist high-angle map view of a modern urban flagship store location. The map uses a neutral color palette with #F5F5F5 backgrounds and thin grey lines for streets. A single prominent blue pinpoint marker identifies the APEX SPORT CO. store location. The overall aesthetic is professional, architectural, and aligns with Scandinavian design principles." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgyVkQOrIX1-ZaP9Iaeoaqiu4qUY8K8nk6WzbalqMDKyn0vmmEkw7-Slob4JV35b_xgGBJTR_ULGE9Kcf7iCbN7FhzYge7guVR7yaUewtWlGEnC6_t6pUO1jzHdG4G5fb1NraTk00kmKpCCLxHDoN80PLCJ_KZtvLgnsACKeKcsi8uckqOKDYGsN27_rGGSGqv1LYq8i6Ot7ARYnnNjto_N4I0xs9Mde01SkU6k3kJotK8KJR_FAzY_RDoK6Fne0EF60FPPghA5cVG"/>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="bg-white px-md py-xs rounded-full shadow-lg border border-[#DFDFDF] flex items-center space-x-xs">
+<span class="material-symbols-outlined text-primary" data-icon="location_on">location_on</span>
+<span class="text-body-sm font-bold">Flagship Store Chamonix</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="max-w-4xl mx-auto px-gutter py-xl">
+<div class="text-center mb-lg">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-xs">Preguntas Frecuentes</h2>
+<p class="text-body-sm text-on-surface-variant uppercase tracking-widest">Resolviendo tus dudas al instante</p>
+</div>
+<div class="space-y-sm">
+<!-- FAQ Item 1 -->
+<div class="accordion-item border border-outline-variant rounded-lg overflow-hidden transition-all duration-200 hover:border-primary">
+<button class="w-full px-md py-sm flex items-center justify-between text-left focus:outline-none" onclick="toggleAccordion(this)">
+<span class="text-body-md font-bold text-on-surface">¿Cuál es el plazo de entrega para pedidos internacionales?</span>
+<span class="material-symbols-outlined rotate-icon transition-transform duration-300" data-icon="expand_more">expand_more</span>
+</button>
+<div class="accordion-content bg-surface-container-low">
+<div class="px-md py-sm text-body-sm text-on-surface-variant border-t border-outline-variant">
+                            Los envíos internacionales suelen tardar entre 5 y 10 días laborables, dependiendo de la ubicación y el servicio de aduanas. Todos nuestros envíos incluyen seguimiento en tiempo real.
+                        </div>
+</div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="accordion-item border border-outline-variant rounded-lg overflow-hidden transition-all duration-200 hover:border-primary">
+<button class="w-full px-md py-sm flex items-center justify-between text-left focus:outline-none" onclick="toggleAccordion(this)">
+<span class="text-body-md font-bold text-on-surface">¿Cómo puedo tramitar una devolución?</span>
+<span class="material-symbols-outlined rotate-icon transition-transform duration-300" data-icon="expand_more">expand_more</span>
+</button>
+<div class="accordion-content bg-surface-container-low">
+<div class="px-md py-sm text-body-sm text-on-surface-variant border-t border-outline-variant">
+                            Dispones de 30 días naturales para devoluciones gratuitas. Simplemente accede a tu perfil, selecciona el pedido y descarga la etiqueta de retorno. El producto debe estar en su embalaje original.
+                        </div>
+</div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="accordion-item border border-outline-variant rounded-lg overflow-hidden transition-all duration-200 hover:border-primary">
+<button class="w-full px-md py-sm flex items-center justify-between text-left focus:outline-none" onclick="toggleAccordion(this)">
+<span class="text-body-md font-bold text-on-surface">¿Ofrecéis garantía de por vida en vuestro equipamiento de alpinismo?</span>
+<span class="material-symbols-outlined rotate-icon transition-transform duration-300" data-icon="expand_more">expand_more</span>
+</button>
+<div class="accordion-content bg-surface-container-low">
+<div class="px-md py-sm text-body-sm text-on-surface-variant border-t border-outline-variant">
+                            Nuestra línea de alpinismo "APEX PRO" cuenta con una garantía limitada de por vida contra defectos de fabricación. Para el resto de productos, ofrecemos la garantía legal de 3 años.
+                        </div>
+</div>
+</div>
+<!-- FAQ Item 4 -->
+<div class="accordion-item border border-outline-variant rounded-lg overflow-hidden transition-all duration-200 hover:border-primary">
+<button class="w-full px-md py-sm flex items-center justify-between text-left focus:outline-none" onclick="toggleAccordion(this)">
+<span class="text-body-md font-bold text-on-surface">¿Dónde puedo ver vuestra guía de tallas?</span>
+<span class="material-symbols-outlined rotate-icon transition-transform duration-300" data-icon="expand_more">expand_more</span>
+</button>
+<div class="accordion-content bg-surface-container-low">
+<div class="px-md py-sm text-body-sm text-on-surface-variant border-t border-outline-variant">
+                            Encontrarás un enlace a la guía de tallas específica en cada página de producto, justo debajo de la selección de talla. También puedes encontrarla en el pie de página de nuestro sitio web.
+                        </div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="w-full bg-inverse-surface dark:bg-surface-container-low text-surface-variant mt-xl">
+<div class="w-full py-xl px-gutter max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-4 gap-lg">
+<div class="flex flex-col space-y-md">
+<div class="text-headline-md font-headline-md text-surface-container-lowest dark:text-primary">
+                    APEX SPORT CO.
+                </div>
+<p class="text-body-sm font-body-sm opacity-80">Rendimiento sueco para atletas globales. Calidad, diseño y durabilidad en cada pieza.</p>
+</div>
+<div class="flex flex-col space-y-sm">
+<h4 class="text-label-caps font-label-caps text-primary-fixed dark:text-primary">PRODUCTOS</h4>
+<div class="flex flex-col space-y-xs">
+<a class="text-body-sm hover:text-surface-bright dark:hover:text-primary transition-colors" href="#">Surf</a>
+<a class="text-body-sm hover:text-surface-bright dark:hover:text-primary transition-colors" href="#">Alpinismo</a>
+<a class="text-body-sm hover:text-surface-bright dark:hover:text-primary transition-colors" href="#">Snowboard</a>
+<a class="text-body-sm hover:text-surface-bright dark:hover:text-primary transition-colors" href="#">Montaña</a>
+<a class="text-body-sm hover:text-surface-bright dark:hover:text-primary transition-colors" href="#">Fútbol</a>
+<a class="text-body-sm hover:text-surface-bright dark:hover:text-primary transition-colors" href="#">Béisbol</a>
+</div>
+</div>
+<div class="flex flex-col space-y-sm">
+<h4 class="text-label-caps font-label-caps text-primary-fixed dark:text-primary">SOPORTE</h4>
+<div class="flex flex-col space-y-xs">
+<a class="text-body-sm hover:text-surface-bright dark:hover:text-primary transition-colors" href="#">Envíos y Devoluciones</a>
+<a class="text-body-sm hover:text-surface-bright dark:hover:text-primary transition-colors" href="#">Guía de Tallas</a>
+<a class="text-body-sm text-surface-bright underline transition-colors" href="#">Contacto</a>
+</div>
+</div>
+<div class="flex flex-col space-y-sm">
+<h4 class="text-label-caps font-label-caps text-primary-fixed dark:text-primary">SOBRE NOSOTROS</h4>
+<div class="flex flex-col space-y-xs">
+<a class="text-body-sm hover:text-surface-bright dark:hover:text-primary transition-colors" href="#">Nuestra Historia</a>
+<a class="text-body-sm hover:text-surface-bright dark:hover:text-primary transition-colors" href="#">Sostenibilidad</a>
+<a class="text-body-sm hover:text-surface-bright dark:hover:text-primary transition-colors" href="#">Privacidad</a>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-gutter py-md border-t border-white/10">
+<p class="text-body-sm font-body-sm opacity-60">© 2024 APEX SPORT CO. Todos los derechos reservados.</p>
+</div>
+</footer>
+<script>
+        function toggleAccordion(button) {
+            const item = button.parentElement;
+            const isActive = item.classList.contains('active');
+            
+            // Close all items
+            document.querySelectorAll('.accordion-item').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            // Toggle clicked item
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        }
+
+        // Add visual micro-interaction for form inputs
+        const inputs = document.querySelectorAll('input, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.querySelector('label').style.color = '#0058a3';
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.querySelector('label').style.color = '';
+            });
+        });
+    </script>
+</body></html>

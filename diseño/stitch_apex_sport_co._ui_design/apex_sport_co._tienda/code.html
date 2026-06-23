@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tienda | APEX SPORT CO.</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#00417a",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed": "#ffdbc9",
+                    "surface-container-highest": "#e1e2e9",
+                    "on-surface-variant": "#424751",
+                    "primary-fixed-dim": "#a5c8ff",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-fixed-variant": "#534600",
+                    "background": "#f9f9ff",
+                    "surface-bright": "#f9f9ff",
+                    "on-primary-fixed": "#001c3a",
+                    "error": "#ba1a1a",
+                    "secondary-container": "#f9d600",
+                    "surface-container": "#ededf4",
+                    "on-primary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#ffb68c",
+                    "outline": "#727782",
+                    "on-tertiary-fixed": "#321200",
+                    "on-tertiary-container": "#ffc09d",
+                    "on-secondary-container": "#6d5c00",
+                    "inverse-surface": "#2e3036",
+                    "surface-container-low": "#f2f3fa",
+                    "surface": "#f9f9ff",
+                    "surface-tint": "#135faa",
+                    "inverse-on-surface": "#eff0f7",
+                    "on-tertiary-fixed-variant": "#753400",
+                    "tertiary-container": "#8f4100",
+                    "primary-container": "#0058a3",
+                    "surface-container-high": "#e7e8ef",
+                    "secondary-fixed-dim": "#e6c500",
+                    "on-secondary-fixed": "#221b00",
+                    "on-error-container": "#93000a",
+                    "on-surface": "#191c21",
+                    "on-background": "#191c21",
+                    "on-primary-container": "#b2cfff",
+                    "surface-variant": "#e1e2e9",
+                    "on-primary-fixed-variant": "#004786",
+                    "primary-fixed": "#d4e3ff",
+                    "secondary-fixed": "#ffe25c",
+                    "inverse-primary": "#a5c8ff",
+                    "secondary": "#6e5e00",
+                    "surface-dim": "#d8dae0",
+                    "tertiary": "#6b2f00",
+                    "outline-variant": "#c2c6d3"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "40px"
+            },
+            "spacing": {
+                    "lg": "48px",
+                    "md": "24px",
+                    "xs": "8px",
+                    "xl": "80px",
+                    "gutter": "24px",
+                    "base": "4px",
+                    "sm": "16px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Inter"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "body-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #FFFFFF;
+            font-family: 'Inter', sans-serif;
+            color: #191c21;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for minimalist feel */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #dfdfdf; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #0058a3; }
+        
+        /* Skeleton/Placeholder subtle pulse */
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .7; }
+        }
+        .animate-pulse-subtle { animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<header class="w-full flex flex-col sticky top-0 z-50 bg-surface-container-lowest border-b border-outline-variant">
+<div class="max-w-container-max mx-auto w-full px-gutter h-20 flex items-center justify-between">
+<!-- Brand Logo -->
+<div class="flex items-center gap-md">
+<span class="text-headline-md font-headline-md font-black text-primary tracking-tight">APEX SPORT CO.</span>
+</div>
+<!-- Search Bar (on_left logic) -->
+<div class="hidden md:flex flex-1 max-w-md mx-md">
+<div class="w-full relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-lg pl-10 pr-4 py-2 text-body-sm focus:ring-2 focus:ring-primary" placeholder="Buscar equipamiento..." type="text"/>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="hidden lg:flex items-center gap-md">
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#">Inicio</a>
+<a class="text-primary border-b-2 border-primary font-bold pb-1 transition-colors duration-200" href="#">Surf</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#">Alpinismo</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#">Snowboard</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#">Montaña</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#">Nosotros</a>
+</nav>
+<!-- Trailing Icons -->
+<div class="flex items-center gap-md ml-md">
+<button class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity">person</button>
+<div class="relative">
+<button class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity">shopping_cart</button>
+<span class="absolute -top-2 -right-2 bg-secondary-container text-on-secondary-container text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full">2</span>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<!-- Breadcrumbs & Header -->
+<section class="max-w-container-max mx-auto px-gutter pt-md pb-xs">
+<nav class="flex items-center gap-xs text-body-sm text-on-surface-variant mb-xs">
+<a class="hover:text-primary" href="#">Inicio</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="font-bold text-primary">Tienda</span>
+</nav>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-md border-b border-outline-variant pb-md">
+<div>
+<h1 class="text-display-lg font-display-lg text-primary">Explorar Equipamiento</h1>
+<p class="text-body-md text-on-surface-variant max-w-xl">Descubre nuestra selección premium de material deportivo diseñado para el máximo rendimiento en condiciones extremas.</p>
+</div>
+<div class="flex items-center gap-sm">
+<span class="text-label-caps text-on-surface-variant">ORDENAR POR:</span>
+<select class="border-outline-variant rounded-lg text-body-sm py-1.5 pl-3 pr-8 focus:ring-primary focus:border-primary">
+<option>Relevancia</option>
+<option>Menor precio</option>
+<option>Mayor precio</option>
+<option>Novedades</option>
+</select>
+</div>
+</div>
+</section>
+<section class="max-w-container-max mx-auto px-gutter py-lg">
+<div class="flex flex-col md:flex-row gap-lg">
+<!-- Sidebar Filters -->
+<aside class="w-full md:w-64 flex-shrink-0">
+<div class="sticky top-28 space-y-lg">
+<!-- Category Filter -->
+<div>
+<h3 class="text-label-caps text-primary mb-md">CATEGORÍAS</h3>
+<ul class="space-y-sm">
+<li>
+<label class="flex items-center gap-sm cursor-pointer group">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-body-sm text-on-surface group-hover:text-primary transition-colors">Tablas de Surf</span>
+</label>
+</li>
+<li>
+<label class="flex items-center gap-sm cursor-pointer group">
+<input checked="" class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-body-sm text-primary font-bold">Trajes de Neopreno</span>
+</label>
+</li>
+<li>
+<label class="flex items-center gap-sm cursor-pointer group">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-body-sm text-on-surface group-hover:text-primary transition-colors">Accesorios Técnicos</span>
+</label>
+</li>
+<li>
+<label class="flex items-center gap-sm cursor-pointer group">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-body-sm text-on-surface group-hover:text-primary transition-colors">Calzado de Montaña</span>
+</label>
+</li>
+</ul>
+</div>
+<!-- Price Filter -->
+<div>
+<h3 class="text-label-caps text-primary mb-md">RANGO DE PRECIO</h3>
+<div class="space-y-sm">
+<input class="w-full h-1 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary" max="2000" min="0" step="50" type="range"/>
+<div class="flex justify-between text-label-caps text-on-surface-variant">
+<span>€0</span>
+<span>€2000+</span>
+</div>
+<div class="grid grid-cols-2 gap-sm">
+<input class="w-full border-outline-variant rounded-lg text-body-sm p-2" placeholder="Min" type="number"/>
+<input class="w-full border-outline-variant rounded-lg text-body-sm p-2" placeholder="Max" type="number"/>
+</div>
+</div>
+</div>
+<!-- Sport Filter -->
+<div>
+<h3 class="text-label-caps text-primary mb-md">DEPORTE</h3>
+<div class="flex flex-wrap gap-xs">
+<button class="px-3 py-1 rounded-full bg-primary text-on-primary text-label-caps">SURF</button>
+<button class="px-3 py-1 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-variant text-label-caps transition-colors">ALPINISMO</button>
+<button class="px-3 py-1 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-variant text-label-caps transition-colors">SNOWBOARD</button>
+<button class="px-3 py-1 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-variant text-label-caps transition-colors">RUNNING</button>
+</div>
+</div>
+</div>
+</aside>
+<!-- Product Grid -->
+<div class="flex-grow">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-md">
+<!-- Product Card 1 -->
+<article class="group bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden flex flex-col hover:shadow-lg transition-all duration-300">
+<div class="aspect-square bg-surface-container-low overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A professional carbon fiber surfboard with a minimalist matte finish, centered on a neutral studio background with soft architectural shadows. The lighting is clean and Scandinavian in style, emphasizing the high-tech materials and sleek curves of the board. Pure white and cool grey color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChiqwhAvR8UUQrnPJodZfWlb_7gUzK0Kp6GmO6i5DV72kp6CLUUR-xLwbTf6leLlEkHug-goj-pewSZczR20yWh-gzyXVHiw604fBeqPyRdz7MH21vXeSwreqQKOk1EyqEXybpqawIam_dujsitJFjuFqmjiB9Zw8xhgT8tjjcRg6n8zsoDUVeR5W1praXRZ0O1fWa0uOvvlm7OzG8EHvZX8Jvyf3wM5ZdPgPRxUkxIbjNQDJgw3UlOT0futhQDwNP-HzcbQ28WRCf"/>
+<span class="absolute top-3 left-3 bg-secondary-container text-on-secondary-container text-label-caps px-2 py-1 rounded">NUEVO</span>
+</div>
+<div class="p-sm flex flex-col flex-grow">
+<span class="text-label-caps text-on-surface-variant mb-base">SURF SERIES</span>
+<h4 class="font-bold text-body-md text-on-surface mb-xs group-hover:text-primary transition-colors">Apex Pro Carbon Board 6'2"</h4>
+<div class="mt-auto flex items-center justify-between gap-sm">
+<span class="text-headline-md text-primary font-black">€849.00</span>
+</div>
+<button class="mt-md w-full py-3 bg-primary text-on-primary rounded-full font-bold text-body-sm hover:bg-primary-container transition-colors flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+                                    Agregar al carrito
+                                </button>
+</div>
+</article>
+<!-- Product Card 2 -->
+<article class="group bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden flex flex-col hover:shadow-lg transition-all duration-300">
+<div class="aspect-square bg-surface-container-low overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="High-performance technical mountaineering boots for ice climbing, featuring a bright yellow and black color scheme. The boots are placed on a clean grey background with sharp shadows, showcasing the rugged sole and waterproof textures. Professional product photography in a minimalist Swedish studio style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAt5h0ljSla_P9qe8I7093kjFIQgzb3nV4WWYGenJW43NCl0h9us7OMrNYHTL3Ulf4w4Pdt3CS9FoZuPzvLWh68i_0YeCIMdml2TQKfo3XysF6bJ-kun_CEUeoJpzMRri2qExuMPDS8LIP4xf2UO-HTwrmm0Q1lmUYSjd4tYLVgAZBggmMrzFrPGu0Tl7MwZZziofLXy8-Lo2AwJfSvvLPG1KYx-ULhzW_RpuNVXPQVkp_PitHw7WOlRFSo1Ezbay_Z1OOSzR8beo5"/>
+<span class="absolute top-3 right-3 bg-error text-on-error text-label-caps px-2 py-1 rounded">-20%</span>
+</div>
+<div class="p-sm flex flex-col flex-grow">
+<span class="text-label-caps text-on-surface-variant mb-base">ALPINISMO</span>
+<h4 class="font-bold text-body-md text-on-surface mb-xs group-hover:text-primary transition-colors">Summit Tech Ice Boots</h4>
+<div class="mt-auto flex items-center gap-sm">
+<span class="text-headline-md text-error font-black">€320.00</span>
+<span class="text-body-sm text-outline line-through">€400.00</span>
+</div>
+<button class="mt-md w-full py-3 bg-primary text-on-primary rounded-full font-bold text-body-sm hover:bg-primary-container transition-colors flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+                                    Agregar al carrito
+                                </button>
+</div>
+</article>
+<!-- Product Card 3 -->
+<article class="group bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden flex flex-col hover:shadow-lg transition-all duration-300">
+<div class="aspect-square bg-surface-container-low overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Minimalist aerodynamic snowboarding helmet in a matte forest green color. Set against a soft off-white background with professional studio lighting. The focus is on the clean lines and safety features, maintaining a premium outdoor equipment aesthetic. High-key lighting, democratic design style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkAXi0YCWR5OeCCWMuHYSxloQ7eMT956HuvVaHpJU_SL0U-JR6AmUmJogZAdF-q-Uky_xKiocAqMUaL176mNpWIMiyzZV0Z27HKu6UHG1HH7mM-4G-s_5wUu6r8B-W33FJ8M5IJdC2mf-6JOQ_B_QkC7ujrtm_akgCmt3U6mlX_w7UhIx3PXnVcGK8LEQ1n--qc0dcZ2QyOFkSAYO93kl8biuHXlfELW4ZYQpU5lkqFr2-jEB2ZqHJ74GLgnpXAuXfV3yxU1Vy3Ikj"/>
+</div>
+<div class="p-sm flex flex-col flex-grow">
+<span class="text-label-caps text-on-surface-variant mb-base">SNOWBOARD</span>
+<h4 class="font-bold text-body-md text-on-surface mb-xs group-hover:text-primary transition-colors">Aero-Shield Pro Helmet</h4>
+<div class="mt-auto">
+<span class="text-headline-md text-primary font-black">€189.00</span>
+</div>
+<button class="mt-md w-full py-3 bg-primary text-on-primary rounded-full font-bold text-body-sm hover:bg-primary-container transition-colors flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+                                    Agregar al carrito
+                                </button>
+</div>
+</article>
+<!-- Product Card 4 -->
+<article class="group bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden flex flex-col hover:shadow-lg transition-all duration-300">
+<div class="aspect-square bg-surface-container-low overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Technical 4/3mm chest-zip wetsuit for cold water surfing. Displayed as if worn but without a person, showing the ergonomic seams and flexible material. Clean white background with soft shadows. The aesthetic is purely functional and premium, utilizing a dark slate and royal blue palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJcw6Icek2G3FdhOmFxpzLrVp_pjZS1sG4wd6Yc4NIKFnB6GB0hoFmZhJd9pIBpuw1b9FLqQjEhTkinUDgAmX77vYbxDXPq4kCmbfUD7UV_U8FyAfOp5ev7MI5DLu22YvzQE3mE8ohQ8RXlNcnDWNFCwREl9ftECL3gzMjkiNNI_oMDvKZ3XOMaPlsCFntmbiNta2xDGT9ViY8qChfCKps9MKN2xLraCYZQ1DjcPttwg4-GwdIaLJLIZBcYoZ4tmoLhLd3hTDpIDyL"/>
+</div>
+<div class="p-sm flex flex-col flex-grow">
+<span class="text-label-caps text-on-surface-variant mb-base">SURF</span>
+<h4 class="font-bold text-body-md text-on-surface mb-xs group-hover:text-primary transition-colors">Thermo-Flex 4/3mm Wetsuit</h4>
+<div class="mt-auto">
+<span class="text-headline-md text-primary font-black">€295.00</span>
+</div>
+<button class="mt-md w-full py-3 bg-primary text-on-primary rounded-full font-bold text-body-sm hover:bg-primary-container transition-colors flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+                                    Agregar al carrito
+                                </button>
+</div>
+</article>
+<!-- Product Card 5 -->
+<article class="group bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden flex flex-col hover:shadow-lg transition-all duration-300">
+<div class="aspect-square bg-surface-container-low overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="All-mountain freestyle snowboard with a minimalist geometric graphic in blue and white. Centered on a neutral background with a professional top-down studio light that highlights the board's camber profile. Part of a clean, premium sporting goods collection." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC80QYKwuHMH9FaPKyxrc2jYtFq1YJf5YrcudYmPUFjiNp6UdJh9FUlY3kkg0ylvxHtUpr6bF5GyDORwPLmzkjvWU_9PykA7pHagzDR1x3s_cAy9uN67noRfuyN1Gn34hxaDpabpuEiASHfbMfWEv5Bjc0yaZig68FxxLp9CNL9OuMpWvF7f2W2FRysxsX6Rs00Md9VtSfBBZu83C7xx62-bW42vH1kuLvh8Kj580CYkzrzlT7R-im42DbqymABXbrt_TjdxT2rSPCx"/>
+</div>
+<div class="p-sm flex flex-col flex-grow">
+<span class="text-label-caps text-on-surface-variant mb-base">SNOWBOARD</span>
+<h4 class="font-bold text-body-md text-on-surface mb-xs group-hover:text-primary transition-colors">Cloud-Splitter 156 Wide</h4>
+<div class="mt-auto">
+<span class="text-headline-md text-primary font-black">€540.00</span>
+</div>
+<button class="mt-md w-full py-3 bg-primary text-on-primary rounded-full font-bold text-body-sm hover:bg-primary-container transition-colors flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+                                    Agregar al carrito
+                                </button>
+</div>
+</article>
+<!-- Product Card 6 -->
+<article class="group bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden flex flex-col hover:shadow-lg transition-all duration-300">
+<div class="aspect-square bg-surface-container-low overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Lightweight 3-season technical tent for mountaineering in a striking orange color. Setup in a minimalist studio environment with clean white floors and soft lighting that mimics an overcast day. Highlighting durability and lightweight construction for elite athletes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZAiFHJvDrzhH_gUjNke6HK7WU1ym2cql28lBxo7QhDz-jEMkx2xJpZ_L2xad-bEQCsPQ2GwpzfmYzAEjUvXxQA1oEAnTMtLQUJO7VnBHRrzZLKG2vSjxOKftAvAXhmLTUbgAxKf0h8QlewFgPasQNgR1bC2ERwvRH9ZpOvD0nZc8-46ijsSJYJijz9G-TNpeWnorJxqwv_NCZc514_v6N2MIbRKk7ijac1D3l3tt1u-728qtcSGnn7jhDu9Np6ZakFNFymCmAJJvT"/>
+<span class="absolute top-3 left-3 bg-secondary-container text-on-secondary-container text-label-caps px-2 py-1 rounded">POPULAR</span>
+</div>
+<div class="p-sm flex flex-col flex-grow">
+<span class="text-label-caps text-on-surface-variant mb-base">MONTAÑA</span>
+<h4 class="font-bold text-body-md text-on-surface mb-xs group-hover:text-primary transition-colors">High-Peak Ultralight Tent</h4>
+<div class="mt-auto">
+<span class="text-headline-md text-primary font-black">€425.00</span>
+</div>
+<button class="mt-md w-full py-3 bg-primary text-on-primary rounded-full font-bold text-body-sm hover:bg-primary-container transition-colors flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+                                    Agregar al carrito
+                                </button>
+</div>
+</article>
+<!-- Product Card 7 -->
+<article class="group bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden flex flex-col hover:shadow-lg transition-all duration-300">
+<div class="aspect-square bg-surface-container-low overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Modern technical backpack for trail running, extremely sleek and minimalist with hydration bladder system. Slate grey with blue accents. Photographed in a studio with a focus on its ergonomic fit and high-quality materials. IKEA-inspired clean lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCGZWFCbYA51ia3xz7sz3gZVaPDafDjAbspKJ0DASbB-R_giKCZ0lM5om-1tW_5M7LFClhB7yc49rVPVgaRIFIfODSg5_B72At_X-LvxLmjHcN-UdSEDwhsQ_4yanVzh6rumEAlzcUO1I_zCi9oRMk5j94mERb_T4cizNXJB3mnR6rzVyDCv0Ehv8uL_m-1I9SZDlkVY2m2ikYtrt7LKG3PnFcR3XGbqe0iYnRDGFMwnLpBwx5VJdkcA213fnIBNbnLP1y98sIBLJ3"/>
+</div>
+<div class="p-sm flex flex-col flex-grow">
+<span class="text-label-caps text-on-surface-variant mb-base">RUNNING</span>
+<h4 class="font-bold text-body-md text-on-surface mb-xs group-hover:text-primary transition-colors">Apex Trail Hydration Pack</h4>
+<div class="mt-auto">
+<span class="text-headline-md text-primary font-black">€115.00</span>
+</div>
+<button class="mt-md w-full py-3 bg-primary text-on-primary rounded-full font-bold text-body-sm hover:bg-primary-container transition-colors flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+                                    Agregar al carrito
+                                </button>
+</div>
+</article>
+<!-- Product Card 8 -->
+<article class="group bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden flex flex-col hover:shadow-lg transition-all duration-300">
+<div class="aspect-square bg-surface-container-low overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Professional climbing harness in a deep royal blue with black webbing. Detailed stitching is visible. The harness is displayed on a neutral light grey background with clean architectural lighting. Emphasizing safety, engineering, and the Scandinavian minimalist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBC1CIpuP3nMVOb3eQolKgnmNXyL9-c6caOhd0duf3fWt1N16tkQVqQpmH4d-dDtEMrh77P0jwg7Kol50VPyX4FkcDlnTllG50bZCvnkVM5IciKq0BbLsYFsc3tzqLBvxCTOs6Rgjimzsw7P0qHmhkKyddmtVO-mzS1pxOsUW5rTftS7AAQr4CJKBORkIX5K54LZ6qCwLLU64qEmPynn4hN4RqNNkvsz2f8qjITSk-wPVt1eNSnbpNOjpUweWK2Nkvj54Vo5-l8htc9"/>
+</div>
+<div class="p-sm flex flex-col flex-grow">
+<span class="text-label-caps text-on-surface-variant mb-base">ALPINISMO</span>
+<h4 class="font-bold text-body-md text-on-surface mb-xs group-hover:text-primary transition-colors">Pro-Climb Vertical Harness</h4>
+<div class="mt-auto">
+<span class="text-headline-md text-primary font-black">€98.00</span>
+</div>
+<button class="mt-md w-full py-3 bg-primary text-on-primary rounded-full font-bold text-body-sm hover:bg-primary-container transition-colors flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+                                    Agregar al carrito
+                                </button>
+</div>
+</article>
+</div>
+<!-- Pagination -->
+<div class="mt-xl flex items-center justify-center gap-sm">
+<button class="w-10 h-10 rounded-lg border border-outline-variant flex items-center justify-center text-on-surface-variant hover:border-primary hover:text-primary transition-all">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-lg bg-primary text-on-primary font-bold">1</button>
+<button class="w-10 h-10 rounded-lg border border-outline-variant flex items-center justify-center text-on-surface-variant hover:border-primary hover:text-primary transition-all">2</button>
+<button class="w-10 h-10 rounded-lg border border-outline-variant flex items-center justify-center text-on-surface-variant hover:border-primary hover:text-primary transition-all">3</button>
+<span class="text-on-surface-variant">...</span>
+<button class="w-10 h-10 rounded-lg border border-outline-variant flex items-center justify-center text-on-surface-variant hover:border-primary hover:text-primary transition-all">12</button>
+<button class="w-10 h-10 rounded-lg border border-outline-variant flex items-center justify-center text-on-surface-variant hover:border-primary hover:text-primary transition-all">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter / CTA -->
+<section class="bg-surface-container py-xl">
+<div class="max-w-container-max mx-auto px-gutter flex flex-col md:flex-row items-center justify-between gap-lg">
+<div class="max-w-xl">
+<h2 class="text-headline-md font-headline-md text-primary mb-sm">Únete a la élite deportiva</h2>
+<p class="text-body-md text-on-surface-variant">Suscríbete para recibir guías exclusivas de entrenamiento, preventas de nuevos lanzamientos y ofertas especiales para miembros de APEX.</p>
+</div>
+<div class="w-full md:w-auto flex flex-col sm:flex-row gap-sm">
+<input class="min-w-[300px] px-md py-3 border border-outline-variant rounded-lg focus:ring-primary focus:border-primary" placeholder="Tu correo electrónico" type="email"/>
+<button class="px-lg py-3 bg-primary text-on-primary rounded-full font-bold hover:bg-primary-container transition-colors whitespace-nowrap">Suscribirse</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-inverse-surface py-xl px-gutter">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-4 gap-lg">
+<!-- Brand Section -->
+<div class="space-y-md">
+<span class="text-headline-md font-headline-md text-surface-container-lowest font-black tracking-tight">APEX SPORT CO.</span>
+<p class="text-body-sm text-surface-variant max-w-xs">Equipamiento técnico para atletas que desafían sus propios límites. Calidad sueca, rendimiento global.</p>
+</div>
+<!-- Categories -->
+<div>
+<h4 class="text-label-caps text-primary-fixed mb-md">CATEGORÍAS</h4>
+<ul class="space-y-sm">
+<li><a class="text-body-sm text-surface-variant hover:text-surface-bright transition-colors" href="#">Surf</a></li>
+<li><a class="text-body-sm text-surface-variant hover:text-surface-bright transition-colors" href="#">Alpinismo</a></li>
+<li><a class="text-body-sm text-surface-variant hover:text-surface-bright transition-colors" href="#">Snowboard</a></li>
+<li><a class="text-body-sm text-surface-variant hover:text-surface-bright transition-colors" href="#">Montaña</a></li>
+</ul>
+</div>
+<!-- Customer Service -->
+<div>
+<h4 class="text-label-caps text-primary-fixed mb-md">ATENCIÓN AL CLIENTE</h4>
+<ul class="space-y-sm">
+<li><a class="text-body-sm text-surface-variant hover:text-surface-bright transition-colors" href="#">Envíos y Devoluciones</a></li>
+<li><a class="text-body-sm text-surface-variant hover:text-surface-bright transition-colors" href="#">Guía de Tallas</a></li>
+<li><a class="text-body-sm text-surface-variant hover:text-surface-bright transition-colors" href="#">Contacto</a></li>
+<li><a class="text-body-sm text-surface-variant hover:text-surface-bright transition-colors" href="#">Sobre Nosotros</a></li>
+</ul>
+</div>
+<!-- Social/Legal -->
+<div class="space-y-lg">
+<div>
+<h4 class="text-label-caps text-primary-fixed mb-md">SÍGUENOS</h4>
+<div class="flex gap-sm">
+<button class="w-10 h-10 rounded-full border border-surface-variant flex items-center justify-center text-surface-variant hover:text-surface-bright hover:border-surface-bright transition-all">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</button>
+<button class="w-10 h-10 rounded-full border border-surface-variant flex items-center justify-center text-surface-variant hover:text-surface-bright hover:border-surface-bright transition-all">
+<span class="material-symbols-outlined text-[20px]">public</span>
+</button>
+</div>
+</div>
+<p class="text-body-sm text-surface-variant">© 2024 APEX SPORT CO. Todos los derechos reservados.</p>
+</div>
+</div>
+</footer>
+<!-- Inline Interaction Script -->
+<script>
+        // Simple UI interactions
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                if(this.innerText.includes('Agregar')) {
+                    const originalText = this.innerHTML;
+                    this.innerHTML = '<span class="material-symbols-outlined text-[18px]">check</span> ¡Añadido!';
+                    this.classList.replace('bg-primary', 'bg-secondary-container');
+                    this.classList.replace('text-on-primary', 'text-on-secondary-container');
+                    
+                    setTimeout(() => {
+                        this.innerHTML = originalText;
+                        this.classList.replace('bg-secondary-container', 'bg-primary');
+                        this.classList.replace('text-on-secondary-container', 'text-on-primary');
+                    }, 2000);
+                }
+            });
+        });
+
+        // Sticky header background shift on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body></html>
